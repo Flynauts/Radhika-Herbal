@@ -88,7 +88,7 @@ export default function Footer() {
           (123) 456-7890
         </p>
         <p className="flex-1 font-poppins text-[12px] leading-[20px] opacity-60">
-          © 2020 Lift Radhika Herbals. All rights reserved.
+          © 2020 Radhika Herbals. All rights reserved.
         </p>
       </div>
     </div>
