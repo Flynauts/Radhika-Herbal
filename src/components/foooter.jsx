@@ -82,7 +82,7 @@ export default function Footer() {
       {/* Lower row */}
       <div className="max-w-[1200px] mx-auto flex flex-wrap justify-between items-center gap-10 mt-10 text-center">
         <p className="flex-1 font-light text-[18px] leading-[24px]">
-          contact@lift.agency
+          info@radhikaherbal.com
         </p>
         <p className="flex-1 font-light text-[18px] leading-[24px]">
           (123) 456-7890

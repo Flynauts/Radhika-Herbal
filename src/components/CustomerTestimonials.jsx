@@ -47,11 +47,14 @@ const CustomerTestimonials = () => {
   const loopTestimonials = [...testimonials, ...testimonials];
 
   return (
-    <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16 xl:px-24 2xl:px-32 lg:px-32">
+    <div
+      className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16 xl:px-24 2xl:px-32 lg:px-32 
+                     border-gray-300 py-12 mt-12 mb-8"
+    >
       {/* Heading */}
       <div className="text-left lg:mb-8">
         <h2
-          className="text-[28px] text-gray-700 text-left pt-8"
+          className="text-[28px] text-gray-700 pt-2"
           style={{ fontFamily: "Lora" }}
         >
           What Our Customers Say..
@@ -64,7 +67,7 @@ const CustomerTestimonials = () => {
           {loopTestimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-md p-6 flex-shrink-0 w-[300px] md:w-[400px]"
+              className="bg-white rounded-xl shadow-md border border-gray-300 p-6 flex-shrink-0 w-[300px] md:w-[400px]"
             >
               <div className="flex items-center mb-4">
                 <img
