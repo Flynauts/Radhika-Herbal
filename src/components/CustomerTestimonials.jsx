@@ -49,7 +49,7 @@ const CustomerTestimonials = () => {
   return (
     <div
       className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16 xl:px-24 2xl:px-32 lg:px-32 
-                     border-gray-300 py-12 mt-12 mb-8"
+                     border-gray-300 py-12"
     >
       {/* Heading */}
       <div className="text-left lg:mb-8">
