@@ -80,6 +80,9 @@ const EnquiryForm = () => {
             required
           >
             <option value="">Our Products*</option>
+            <option value="Wellness">Contract Manufacturing</option>
+            <option value="Wellness">Private Labeling</option>
+            <option value="Wellness">Corporate gifting</option>
             <option value="Skin Care">Skin Care</option>
             <option value="Hair Care">Hair Care</option>
             <option value="Wellness">Wellness</option>
