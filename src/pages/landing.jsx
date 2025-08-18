@@ -31,11 +31,15 @@ export default function LandingPage() {
   const enquiryRef = useRef(null);
   const productsRef = useRef(null);
 
-  // const scrollToSection = (ref) => {
-  //   if (ref.current) {
-  //     ref.current.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // };
+  // ✅ Helper function: scroll with offset (navbar height ~80px)
+  const scrollToSection = (ref) => {
+    if (ref.current) {
+      const yOffset = -80; // adjust if navbar height is different
+      const y =
+        ref.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -73,11 +77,7 @@ export default function LandingPage() {
                 />
               </div>
               <button
-                onClick={() =>
-                  enquiryRef.current?.scrollIntoView({
-                    behavior: "smooth",
-                  })
-                }
+                onClick={() => scrollToSection(enquiryRef)} // ✅ updated
                 className="bg-olive-dark text-white px-4 py-2 rounded-[12px] font-semibold"
               >
                 Request Quote
@@ -97,60 +97,6 @@ export default function LandingPage() {
             ☰
           </button>
         </div>
-
-        {menuOpen && (
-          <div
-            className="md:hidden flex flex-col gap-4 mt-4 text-sm font-medium px-4"
-            style={{ fontFamily: "Lora" }}
-          >
-            <Link
-              to="/"
-              onClick={() => setMenuOpen(false)}
-              className="hover:underline"
-              style={{ fontFamily: "Lora" }}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              onClick={() => setMenuOpen(false)}
-              className="hover:underline"
-              style={{ fontFamily: "Lora" }}
-            >
-              About Us
-            </Link>
-            <Link
-              to="/contract"
-              onClick={() => setMenuOpen(false)}
-              className="hover:underline"
-              style={{ fontFamily: "Lora" }}
-            >
-              Contract Manufacturing
-            </Link>
-            <Link
-              to="/private"
-              onClick={() => setMenuOpen(false)}
-              className="hover:underline"
-              style={{ fontFamily: "Lora" }}
-            >
-              Private Labelling
-            </Link>
-            <Link
-              to="/corporate"
-              onClick={() => setMenuOpen(false)}
-              className="hover:underline"
-              style={{ fontFamily: "Lora" }}
-            >
-              Corporate Gifting
-            </Link>
-            <button
-              onClick={() => setMenuOpen(false)}
-              className="hover:underline text-left"
-            >
-              Sign-In
-            </button>
-          </div>
-        )}
       </nav>
 
       {/* Routes and Home Page */}
@@ -172,11 +118,7 @@ export default function LandingPage() {
                     <div className="flex justify-center md:justify-start gap-4 mt-4">
                       {/* Scroll to Enquiry Form */}
                       <button
-                        onClick={() =>
-                          enquiryRef.current?.scrollIntoView({
-                            behavior: "smooth",
-                          })
-                        }
+                        onClick={() => scrollToSection(enquiryRef)} // ✅ updated
                         className="bg-olive-dark text-white px-4 py-2 rounded-[12px] font-semibold"
                       >
                         Request Quote
@@ -184,11 +126,7 @@ export default function LandingPage() {
 
                       {/* Scroll to Products Section */}
                       <button
-                        onClick={() =>
-                          productsRef.current?.scrollIntoView({
-                            behavior: "smooth",
-                          })
-                        }
+                        onClick={() => scrollToSection(productsRef)} // ✅ updated
                         className="bg-white text-[#6F8675] px-4 py-2 rounded-[12px] font-semibold"
                       >
                         View Products
@@ -207,13 +145,11 @@ export default function LandingPage() {
               </div>
 
               {/* Home Page Sections */}
-              {/* Home Page Sections */}
               <OurServices />
               <OurCertifications />
               <div ref={productsRef}>
                 <OurProducts />
               </div>
-
               <ProductsGrid />
               <ManufacturingProcess />
               <CustomerTestimonials />
