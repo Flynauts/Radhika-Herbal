@@ -30,13 +30,13 @@ const OurServices = () => {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16 xl:px-24 2xl:px-32 lg:px-32">
         <div className="text-left lg:mb-8">
           <h2
-            className="text-[28px] text-gray-700 text-left pt-8"
+            className="text-[28px] text-gray-700 text-left pt-8 md:pb-4"
             style={{ fontFamily: "Lora" }}
           >
             Our Services
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <div
               key={index}
@@ -45,7 +45,7 @@ const OurServices = () => {
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full rounded-2xl p-2 h-48 object-cover"
+                className="w-full rounded-2xl p-2 h-48 md:h-[86px] lg:h-48 object-cover"
               />
               <p
                 className="py-4 text-gray-600 font-medium text-[20px]"
