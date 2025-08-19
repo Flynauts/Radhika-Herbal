@@ -31,7 +31,7 @@ export default function OurProducts() {
           </h2>
         </div>
 
-        <div className="absolute right-40 top-0 mt-2">
+        <div className="select_category absolute right-40 top-0 mt-2">
           <div className="relative">
             <button
               onClick={toggleDropdown}
